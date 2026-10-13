@@ -1,0 +1,30 @@
+import { createSlice } from "@reduxjs/toolkit";
+
+const initialState = {
+  isAddVideoToPlaylistApear: false,
+  isEditPlaylistModalAppear: false,
+  isCreateTweetAppear: false
+};
+
+const pageAppearSlice = createSlice({
+  name: "pageAppear",
+  initialState,
+  reducers: {
+    setAddVidoeToPlaylistAppear: (state, action) => {
+      state.isAddVideoToPlaylistApear = action.payload;
+    },
+    setIsEditPlaylistModalAppear: (state, action)=>{
+      state.isEditPlaylistModalAppear = action.payload;
+    },
+    setIsCreateTweetAppear: (state, action)=>{
+      state.isCreateTweetAppear = action.payload;
+    }
+  },
+});
+
+export default pageAppearSlice.reducer;
+export const { 
+  setAddVidoeToPlaylistAppear, 
+  setIsEditPlaylistModalAppear,
+  setIsCreateTweetAppear
+} = pageAppearSlice.actions;
